@@ -1,22 +1,21 @@
 const year = document.getElementById("year");
-const form = document.querySelector(".quote-form");
+const links = document.querySelectorAll(".directory-link");
+const sections = [...links]
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
 
 if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-if (form) {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const button = form.querySelector("button");
-    if (!button) return;
+const setActiveLink = () => {
+  const current = sections.findLast((section) => section.getBoundingClientRect().top <= 160);
+  if (!current) return;
 
-    button.textContent = "已收到需求";
-    button.disabled = true;
-
-    setTimeout(() => {
-      button.textContent = "提交询价";
-      button.disabled = false;
-    }, 2400);
+  links.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${current.id}`);
   });
-}
+};
+
+window.addEventListener("scroll", setActiveLink, { passive: true });
+setActiveLink();
