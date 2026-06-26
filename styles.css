@@ -43,8 +43,8 @@ a {
   z-index: 20;
   display: grid;
   width: var(--sidebar-width);
-  grid-template-rows: auto 1fr auto;
-  gap: 34px;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 24px;
   padding: 30px 24px;
   color: var(--white);
   background: #092338;
@@ -90,6 +90,8 @@ a {
 }
 
 .language-toggle {
+  width: fit-content;
+  align-self: start;
   padding: 8px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
