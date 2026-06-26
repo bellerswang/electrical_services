@@ -90,8 +90,31 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+const safeStorage = {
+  get(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  },
+  set(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Language switching should still work when storage is blocked.
+    }
+  }
+};
+
 const setActiveLink = () => {
-  const current = sections.findLast((section) => section.getBoundingClientRect().top <= 160);
+  let current = null;
+  sections.forEach((section) => {
+    if (section.getBoundingClientRect().top <= 160) {
+      current = section;
+    }
+  });
+
   if (!current) return;
 
   links.forEach((link) => {
@@ -115,7 +138,7 @@ const setLanguage = (language) => {
     button.classList.toggle("active", button.dataset.lang === language);
   });
 
-  localStorage.setItem("siteLanguage", language);
+  safeStorage.set("siteLanguage", language);
 };
 
 languageButtons.forEach((button) => {
@@ -124,4 +147,4 @@ languageButtons.forEach((button) => {
 
 window.addEventListener("scroll", setActiveLink, { passive: true });
 setActiveLink();
-setLanguage(localStorage.getItem("siteLanguage") || "en");
+setLanguage(safeStorage.get("siteLanguage") || "en");

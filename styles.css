@@ -97,8 +97,9 @@ a {
 }
 
 .lang-button {
+  width: 58px;
   min-height: 34px;
-  padding: 0 12px;
+  padding: 0;
   color: rgba(255, 255, 255, 0.76);
   background: transparent;
   border: 0;
@@ -107,6 +108,7 @@ a {
   font: inherit;
   font-size: 13px;
   font-weight: 800;
+  text-align: center;
 }
 
 .lang-button.active {
