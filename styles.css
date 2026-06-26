@@ -28,6 +28,10 @@ body {
   font-family: "Inter", Arial, sans-serif;
 }
 
+html[data-language="zh"] body {
+  font-family: "Noto Sans SC", "Inter", Arial, sans-serif;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -78,6 +82,38 @@ a {
   line-height: 1.5;
 }
 
+.language-toggle,
+.mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-toggle {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+.lang-button {
+  min-height: 34px;
+  padding: 0 12px;
+  color: rgba(255, 255, 255, 0.76);
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.lang-button.active {
+  color: var(--blue-dark);
+  background: var(--ice);
+}
+
 .directory-nav {
   display: grid;
   align-content: start;
@@ -96,6 +132,10 @@ a {
   border-radius: 8px;
   line-height: 1.35;
   font-weight: 700;
+}
+
+.directory-link b {
+  font: inherit;
 }
 
 .directory-link:hover,
@@ -450,6 +490,17 @@ h2 {
   .mobile-brand,
   .mobile-call {
     font-weight: 800;
+  }
+
+  .mobile-actions .lang-button {
+    color: var(--muted);
+    border: 1px solid var(--line);
+  }
+
+  .mobile-actions .lang-button.active {
+    color: var(--white);
+    background: var(--blue);
+    border-color: var(--blue);
   }
 
   .mobile-call {

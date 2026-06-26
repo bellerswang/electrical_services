@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-language="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
@@ -21,32 +21,37 @@
       <a class="brand" href="#top" aria-label="Outstanding Cleaning and Maintenance Limited home">
         <span class="brand-mark">OCM</span>
         <span>
-          <strong>Outstanding Cleaning and Maintenance Limited</strong>
-          <small>Cleaning, cooling and property care</small>
+          <strong data-i18n="brand.name">Outstanding Cleaning and Maintenance Limited</strong>
+          <small data-i18n="brand.tagline">Cleaning, cooling and property care</small>
         </span>
       </a>
+
+      <div class="language-toggle" aria-label="Language switcher">
+        <button class="lang-button active" type="button" data-lang="en">EN</button>
+        <button class="lang-button" type="button" data-lang="zh">中文</button>
+      </div>
 
       <nav class="directory-nav">
         <a class="directory-link active" href="#ac">
           <span>01</span>
-          AC Installation & Maintenance
+          <b data-i18n="nav.ac">AC Installation & Maintenance</b>
         </a>
         <a class="directory-link" href="#property">
           <span>02</span>
-          Property Maintenance
+          <b data-i18n="nav.property">Property Maintenance</b>
         </a>
         <a class="directory-link" href="#boiler">
           <span>03</span>
-          Boiler & HIU Maintenance
+          <b data-i18n="nav.boiler">Boiler & HIU Maintenance</b>
         </a>
         <a class="directory-link" href="#carpet">
           <span>04</span>
-          Carpet Cleaning & End of Tenancy Cleaning
+          <b data-i18n="nav.carpet">Carpet Cleaning & End of Tenancy Cleaning</b>
         </a>
       </nav>
 
       <div class="sidebar-contact">
-        <strong>Contact</strong>
+        <strong data-i18n="contact.label">Contact</strong>
         <a href="tel:+447367582623">07367 582623</a>
         <a href="mailto:info.outstanding.cm@gmai.com">info.outstanding.cm@gmai.com</a>
         <span>8 Gervase Road, Edgware, HA8 0EP</span>
@@ -56,33 +61,37 @@
     <main class="site-shell" id="top">
       <header class="mobile-header">
         <a class="mobile-brand" href="#top">Outstanding C&M</a>
-        <a class="mobile-call" href="tel:+447367582623">Call</a>
+        <div class="mobile-actions">
+          <button class="lang-button active" type="button" data-lang="en">EN</button>
+          <button class="lang-button" type="button" data-lang="zh">中文</button>
+          <a class="mobile-call" href="tel:+447367582623" data-i18n="mobile.call">Call</a>
+        </div>
       </header>
 
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">AC and cold room services for homes, shops and small commercial units</p>
-          <h1 id="hero-title">Installation, maintenance and repair work arranged clearly from the first call.</h1>
-          <p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">AC and cold room services for homes, shops and small commercial units</p>
+          <h1 id="hero-title" data-i18n="hero.title">Installation, maintenance and repair work arranged clearly from the first call.</h1>
+          <p data-i18n="hero.copy">
             Outstanding Cleaning and Maintenance Limited is being repositioned around air conditioning,
             cold room installation and repair, while keeping property maintenance and cleaning services easy to find.
           </p>
           <div class="hero-actions">
-            <a class="primary-button" href="tel:+447367582623">Call 07367 582623</a>
-            <a class="secondary-button" href="#ac">View service directory</a>
+            <a class="primary-button" href="tel:+447367582623" data-i18n="hero.call">Call 07367 582623</a>
+            <a class="secondary-button" href="#ac" data-i18n="hero.directory">View service directory</a>
           </div>
         </div>
 
         <div class="hero-card" aria-label="Company details">
-          <span class="status-pill">Open for enquiries</span>
-          <h2>Outstanding Cleaning and Maintenance Limited</h2>
+          <span class="status-pill" data-i18n="hero.status">Open for enquiries</span>
+          <h2 data-i18n="brand.name">Outstanding Cleaning and Maintenance Limited</h2>
           <dl>
             <div>
-              <dt>Address</dt>
+              <dt data-i18n="contact.address">Address</dt>
               <dd>8 Gervase Road, Edgware, HA8 0EP</dd>
             </div>
             <div>
-              <dt>Mobile</dt>
+              <dt data-i18n="contact.mobile">Mobile</dt>
               <dd><a href="tel:+447367582623">07367 582623</a></dd>
             </div>
             <div>
@@ -95,16 +104,16 @@
 
       <section class="focus-strip" aria-label="Primary promotion">
         <article>
-          <span>Primary focus</span>
-          <strong>AC installation and maintenance</strong>
+          <span data-i18n="focus.primaryLabel">Primary focus</span>
+          <strong data-i18n="focus.primary">AC installation and maintenance</strong>
         </article>
         <article>
-          <span>Commercial cooling</span>
-          <strong>Cold room installation and repairs</strong>
+          <span data-i18n="focus.coldLabel">Commercial cooling</span>
+          <strong data-i18n="focus.cold">Cold room installation and repairs</strong>
         </article>
         <article>
-          <span>Support work</span>
-          <strong>Property, boiler, HIU and cleaning services</strong>
+          <span data-i18n="focus.supportLabel">Support work</span>
+          <strong data-i18n="focus.support">Property, boiler, HIU and cleaning services</strong>
         </article>
       </section>
 
@@ -112,9 +121,9 @@
         <div class="service-heading">
           <span>01</span>
           <div>
-            <p class="eyebrow">Cooling services</p>
-            <h2 id="ac-title">AC Installation & Maintenance</h2>
-            <p class="section-note">Use this as the main promotional section. Cold room installation and repairs can be added here.</p>
+            <p class="eyebrow" data-i18n="section.ac.eyebrow">Cooling services</p>
+            <h2 id="ac-title" data-i18n="section.ac.title">AC Installation & Maintenance</h2>
+            <p class="section-note" data-i18n="section.ac.note">Use this as the main promotional section. Cold room installation and repairs can be added here.</p>
           </div>
         </div>
         <div class="content-slot" aria-label="AC detailed content placeholder"></div>
@@ -124,8 +133,8 @@
         <div class="service-heading">
           <span>02</span>
           <div>
-            <p class="eyebrow">General care</p>
-            <h2 id="property-title">Property Maintenance</h2>
+            <p class="eyebrow" data-i18n="section.property.eyebrow">General care</p>
+            <h2 id="property-title" data-i18n="section.property.title">Property Maintenance</h2>
           </div>
         </div>
         <div class="content-slot" aria-label="Property maintenance detailed content placeholder"></div>
@@ -135,8 +144,8 @@
         <div class="service-heading">
           <span>03</span>
           <div>
-            <p class="eyebrow">Heating and hot water</p>
-            <h2 id="boiler-title">Boiler & HIU Maintenance</h2>
+            <p class="eyebrow" data-i18n="section.boiler.eyebrow">Heating and hot water</p>
+            <h2 id="boiler-title" data-i18n="section.boiler.title">Boiler & HIU Maintenance</h2>
           </div>
         </div>
         <div class="content-slot" aria-label="Boiler and HIU detailed content placeholder"></div>
@@ -146,8 +155,8 @@
         <div class="service-heading">
           <span>04</span>
           <div>
-            <p class="eyebrow">Cleaning services</p>
-            <h2 id="carpet-title">Carpet Cleaning & End of Tenancy Cleaning</h2>
+            <p class="eyebrow" data-i18n="section.carpet.eyebrow">Cleaning services</p>
+            <h2 id="carpet-title" data-i18n="section.carpet.title">Carpet Cleaning & End of Tenancy Cleaning</h2>
           </div>
         </div>
         <div class="content-slot" aria-label="Carpet cleaning detailed content placeholder"></div>
@@ -155,22 +164,22 @@
 
       <section class="contact-panel" id="contact" aria-labelledby="contact-title">
         <div>
-          <p class="eyebrow">Ready to replace with your real copy</p>
-          <h2 id="contact-title">Send the service details when ready, and they can be pasted into each blank section.</h2>
+          <p class="eyebrow" data-i18n="final.eyebrow">Ready to replace with your real copy</p>
+          <h2 id="contact-title" data-i18n="final.title">Send the service details when ready, and they can be pasted into each blank section.</h2>
         </div>
         <div class="contact-buttons">
-          <a href="tel:+447367582623">Call 07367 582623</a>
-          <a href="mailto:info.outstanding.cm@gmai.com">Email the company</a>
+          <a href="tel:+447367582623" data-i18n="final.call">Call 07367 582623</a>
+          <a href="mailto:info.outstanding.cm@gmai.com" data-i18n="final.email">Email the company</a>
         </div>
       </section>
 
       <footer class="site-footer">
-        <p>© <span id="year"></span> Outstanding Cleaning and Maintenance Limited</p>
-        <a href="#top">Back to top</a>
+        <p>Copyright <span id="year"></span> Outstanding Cleaning and Maintenance Limited</p>
+        <a href="#top" data-i18n="footer.top">Back to top</a>
       </footer>
     </main>
 
-    <a class="floating-call" href="tel:+447367582623">Call now</a>
+    <a class="floating-call" href="tel:+447367582623" data-i18n="floating.call">Call now</a>
 
     <script src="script.js"></script>
   </body>
